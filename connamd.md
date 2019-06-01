@@ -52,3 +52,29 @@
 - 后台模式 `sleep 10 &`, `jobs` 查看后台的作业
 - 协程 `coproc sleep 10`， `coproc myjob { sleep 10; }` 设置名字的协程。
 - 命名别名 `alias li='ls -li'`。
+  
+## 环境变量
+
+- 全局环境变量`env or printenv` 查看全局变量，`printenv HOME`显示个别变量的名字。或者使用`echo $PATH`
+- 局部环境变量`set`显示某个特定进程设置的全部环境变量（局部，全局，用户自定义）。
+- 用户自定义变量
+  
+    ```shell
+    var=hello;
+    var1='hello world'; # 没有空格=和变量之间
+    echo $var;
+    echo $var1;
+    ```
+
+- 设置全局变量，子进程可见。先创建一个局部变量再导出为全局变量
+
+    ```shell
+    var='I am a global var';
+    export var;
+    echo $var;
+    bash;
+    echo $var;
+    ```
+
+- 取消一个变量 `unset`。
+  
