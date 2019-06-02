@@ -77,4 +77,32 @@
     ```
 
 - 取消一个变量 `unset`。
+- 设置`PATH`，`PATH=$PATH:/home/ys/scripts;export PATH`;设置PATH并且导出为全局变量
+- 默认的系统环境变量
+  - `/etc/profile`默认的bash shell主启动文件，登录之后默认启动。`/etc/profile.d`特定应用启动文件
+  - `$HOME`下的启动文件
   
+  ```shell
+   #下面四个文件一到两个， 通常顺序执行
+   $HOME/.bash_profile
+   $HOME/.bash_login
+   $HOME/.profile
+   $HOME/.bashrc #被包含在其他文件中执行
+  ```  
+
+  - 环境变量持久化，对于个人用户存放在`.bashrc`中。
+- 数组变量
+
+  ```shell
+   myarr=(one two three four five);
+   echo $myarr; # 打印第一个变量 one
+   echo ${myarr[2]} # 打印第二个变量
+   echo ${myarr[*]} # 打印全部
+   myarr[2]=seven # 修改变量
+   echo ${myarr[*]}
+   unset myarr[2] # 取消变量2
+   unset myarr # 取消数组
+  ```
+
+## 文件权限
+
