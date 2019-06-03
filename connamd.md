@@ -106,3 +106,16 @@
 
 ## 文件权限
 
+- 添加用户`useradd -D`，显示创建用户默认值。创建带目录的的用户`useradd -m test`。更改默认值`useradd -D -s /bin/tsch`,修改用户的默认shell。
+- 删除用户`userdel`，默认只删除`/etc/passwd`的信息，`-r`参数可以删除home和配置目录
+- 修改用户
+  - `usermod`能修改`paswd`中的大部分字段，备注，日期，组。`-l`修改登录名，`-L`锁定用户，`-p`修改密码，`-U`解除锁定
+  - `passwd`和`chpasswd`。`passwd test`更改test用户的密码
+  - `chsh`,`chfn`,`chage`修改shell,`chsh -s /bin/csh test`。`finger`查看用户信息。`chfn`存储备注信息。`change`帮助管理用户的有效期
+- 用户组
+  - 用户信息`/etc/passwd`,组信息`/etc/group`
+  - 添加新的组`groupadd shared`。添加组成员`usermod -G shared test`。
+  - 修改组`groupmod -n sharing shared`。`-g`选项修改GID.
+- 改变权限`chmod`,`-R`递归的作用到文件和子目录。
+- 改变所属关系`chown dan newfile`指定文件的新属主。更改属主和属组`chown dan.sharing newfile`。`chgrp sharing newfile`。更改文件和目录的默认属组。
+  
