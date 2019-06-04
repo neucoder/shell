@@ -119,4 +119,6 @@
 - 改变权限`chmod`,`-R`递归的作用到文件和子目录。
 - 改变所属关系`chown dan newfile`指定文件的新属主。更改属主和属组`chown dan.sharing newfile`。`chgrp sharing newfile`。更改文件和目录的默认属组。
 - 添加sudo组 `adduser ys sudo`
+- 将一个用户从组中删除，`gpasswd -d userName groupName`。
+- 删除一个组`groupdel group`。
   
